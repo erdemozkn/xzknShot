@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8F4AD8AF-7FE4-4B43-A84E-60660E17C026}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>xzknshot</RootNamespace>
+    <AssemblyName>xzknshot</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Tesseract, Version=5.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Tesseract.5.2.0\lib\net47\Tesseract.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="tessdata\afr.traineddata" />
+    <None Include="tessdata\amh.traineddata" />
+    <None Include="tessdata\ara.traineddata" />
+    <None Include="tessdata\asm.traineddata" />
+    <None Include="tessdata\aze.traineddata" />
+    <None Include="tessdata\aze_cyrl.traineddata" />
+    <None Include="tessdata\bel.traineddata" />
+    <None Include="tessdata\ben.traineddata" />
+    <None Include="tessdata\bod.traineddata" />
+    <None Include="tessdata\bos.traineddata" />
+    <None Include="tessdata\bre.traineddata" />
+    <None Include="tessdata\bul.traineddata" />
+    <None Include="tessdata\cat.traineddata" />
+    <None Include="tessdata\ceb.traineddata" />
+    <None Include="tessdata\ces.traineddata" />
+    <None Include="tessdata\chi_sim.traineddata" />
+    <None Include="tessdata\chi_sim_vert.traineddata" />
+    <None Include="tessdata\chi_tra.traineddata" />
+    <None Include="tessdata\chi_tra_vert.traineddata" />
+    <None Include="tessdata\chr.traineddata" />
+    <None Include="tessdata\configs" />
+    <None Include="tessdata\cos.traineddata" />
+    <None Include="tessdata\cym.traineddata" />
+    <None Include="tessdata\dan.traineddata" />
+    <None Include="tessdata\dan_frak.traineddata" />
+    <None Include="tessdata\deu.traineddata" />
+    <None Include="tessdata\deu_frak.traineddata" />
+    <None Include="tessdata\deu_latf.traineddata" />
+    <None Include="tessdata\div.traineddata" />
+    <None Include="tessdata\dzo.traineddata" />
+    <None Include="tessdata\ell.traineddata" />
+    <None Include="tessdata\eng.traineddata" />
+    <None Include="tessdata\enm.traineddata" />
+    <None Include="tessdata\epo.traineddata" />
+    <None Include="tessdata\equ.traineddata" />
+    <None Include="tessdata\est.traineddata" />
+    <None Include="tessdata\eus.traineddata" />
+    <None Include="tessdata\fao.traineddata" />
+    <None Include="tessdata\fas.traineddata" />
+    <None Include="tessdata\fil.traineddata" />
+    <None Include="tessdata\fin.traineddata" />
+    <None Include="tessdata\fra.traineddata" />
+    <None Include="tessdata\frm.traineddata" />
+    <None Include="tessdata\fry.traineddata" />
+    <None Include="tessdata\gla.traineddata" />
+    <None Include="tessdata\gle.traineddata" />
+    <None Include="tessdata\glg.traineddata" />
+    <None Include="tessdata\grc.traineddata" />
+    <None Include="tessdata\guj.traineddata" />
+    <None Include="tessdata\hat.traineddata" />
+    <None Include="tessdata\heb.traineddata" />
+    <None Include="tessdata\hin.traineddata" />
+    <None Include="tessdata\hrv.traineddata" />
+    <None Include="tessdata\hun.traineddata" />
+    <None Include="tessdata\hye.traineddata" />
+    <None Include="tessdata\iku.traineddata" />
+    <None Include="tessdata\ind.traineddata" />
+    <None Include="tessdata\isl.traineddata" />
+    <None Include="tessdata\ita.traineddata" />
+    <None Include="tessdata\ita_old.traineddata" />
+    <None Include="tessdata\jav.traineddata" />
+    <None Include="tessdata\jpn.traineddata" />
+    <None Include="tessdata\jpn_vert.traineddata" />
+    <None Include="tessdata\kan.traineddata" />
+    <None Include="tessdata\kat.traineddata" />
+    <None Include="tessdata\kat_old.traineddata" />
+    <None Include="tessdata\kaz.traineddata" />
+    <None Include="tessdata\khm.traineddata" />
+    <None Include="tessdata\kir.traineddata" />
+    <None Include="tessdata\kmr.traineddata" />
+    <None Include="tessdata\kor.traineddata" />
+    <None Include="tessdata\kor_vert.traineddata" />
+    <None Include="tessdata\lao.traineddata" />
+    <None Include="tessdata\lat.traineddata" />
+    <None Include="tessdata\lav.traineddata" />
+    <None Include="tessdata\LICENSE" />
+    <None Include="tessdata\lit.traineddata" />
+    <None Include="tessdata\ltz.traineddata" />
+    <None Include="tessdata\mal.traineddata" />
+    <None Include="tessdata\mar.traineddata" />
+    <None Include="tessdata\mkd.traineddata" />
+    <None Include="tessdata\mlt.traineddata" />
+    <None Include="tessdata\mon.traineddata" />
+    <None Include="tessdata\mri.traineddata" />
+    <None Include="tessdata\msa.traineddata" />
+    <None Include="tessdata\mya.traineddata" />
+    <None Include="tessdata\nep.traineddata" />
+    <None Include="tessdata\nld.traineddata" />
+    <None Include="tessdata\nor.traineddata" />
+    <None Include="tessdata\oci.traineddata" />
+    <None Include="tessdata\ori.traineddata" />
+    <None Include="tessdata\osd.traineddata" />
+    <None Include="tessdata\pan.traineddata" />
+    <Resource Include="tessdata\pdf.ttf" />
+    <None Include="tessdata\pol.traineddata" />
+    <None Include="tessdata\por.traineddata" />
+    <None Include="tessdata\pus.traineddata" />
+    <None Include="tessdata\que.traineddata" />
+    <None Include="tessdata\README.md" />
+    <None Include="tessdata\ron.traineddata" />
+    <None Include="tessdata\rus.traineddata" />
+    <None Include="tessdata\san.traineddata" />
+    <None Include="tessdata\script\Arabic.traineddata" />
+    <None Include="tessdata\script\Armenian.traineddata" />
+    <None Include="tessdata\script\Bengali.traineddata" />
+    <None Include="tessdata\script\Canadian_Aboriginal.traineddata" />
+    <None Include="tessdata\script\Cherokee.traineddata" />
+    <None Include="tessdata\script\Cyrillic.traineddata" />
+    <None Include="tessdata\script\Devanagari.traineddata" />
+    <None Include="tessdata\script\Ethiopic.traineddata" />
+    <None Include="tessdata\script\Fraktur.traineddata" />
+    <None Include="tessdata\script\Georgian.traineddata" />
+    <None Include="tessdata\script\Greek.traineddata" />
+    <None Include="tessdata\script\Gujarati.traineddata" />
+    <None Include="tessdata\script\Gurmukhi.traineddata" />
+    <None Include="tessdata\script\Hangul.traineddata" />
+    <None Include="tessdata\script\Hangul_vert.traineddata" />
+    <None Include="tessdata\script\HanS.traineddata" />
+    <None Include="tessdata\script\HanS_vert.traineddata" />
+    <None Include="tessdata\script\HanT.traineddata" />
+    <None Include="tessdata\script\HanT_vert.traineddata" />
+    <None Include="tessdata\script\Hebrew.traineddata" />
+    <None Include="tessdata\script\Japanese.traineddata" />
+    <None Include="tessdata\script\Japanese_vert.traineddata" />
+    <None Include="tessdata\script\Kannada.traineddata" />
+    <None Include="tessdata\script\Khmer.traineddata" />
+    <None Include="tessdata\script\Lao.traineddata" />
+    <None Include="tessdata\script\Latin.traineddata" />
+    <None Include="tessdata\script\Malayalam.traineddata" />
+    <None Include="tessdata\script\Myanmar.traineddata" />
+    <None Include="tessdata\script\Oriya.traineddata" />
+    <None Include="tessdata\script\Sinhala.traineddata" />
+    <None Include="tessdata\script\Syriac.traineddata" />
+    <None Include="tessdata\script\Tamil.traineddata" />
+    <None Include="tessdata\script\Telugu.traineddata" />
+    <None Include="tessdata\script\Thaana.traineddata" />
+    <None Include="tessdata\script\Thai.traineddata" />
+    <None Include="tessdata\script\Tibetan.traineddata" />
+    <None Include="tessdata\script\Vietnamese.traineddata" />
+    <None Include="tessdata\sin.traineddata" />
+    <None Include="tessdata\slk.traineddata" />
+    <None Include="tessdata\slk_frak.traineddata" />
+    <None Include="tessdata\slv.traineddata" />
+    <None Include="tessdata\snd.traineddata" />
+    <None Include="tessdata\spa.traineddata" />
+    <None Include="tessdata\spa_old.traineddata" />
+    <None Include="tessdata\sqi.traineddata" />
+    <None Include="tessdata\srp.traineddata" />
+    <None Include="tessdata\srp_latn.traineddata" />
+    <None Include="tessdata\sun.traineddata" />
+    <None Include="tessdata\swa.traineddata" />
+    <None Include="tessdata\swe.traineddata" />
+    <None Include="tessdata\syr.traineddata" />
+    <None Include="tessdata\tam.traineddata" />
+    <None Include="tessdata\tat.traineddata" />
+    <None Include="tessdata\tel.traineddata" />
+    <None Include="tessdata\tgk.traineddata" />
+    <None Include="tessdata\tgl.traineddata" />
+    <None Include="tessdata\tha.traineddata" />
+    <None Include="tessdata\tir.traineddata" />
+    <None Include="tessdata\ton.traineddata" />
+    <None Include="tessdata\tur.traineddata" />
+    <None Include="tessdata\uig.traineddata" />
+    <None Include="tessdata\ukr.traineddata" />
+    <None Include="tessdata\urd.traineddata" />
+    <None Include="tessdata\uzb.traineddata" />
+    <None Include="tessdata\uzb_cyrl.traineddata" />
+    <None Include="tessdata\vie.traineddata" />
+    <None Include="tessdata\yid.traineddata" />
+    <None Include="tessdata\yor.traineddata" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="tessdata\tessconfigs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\math_icon.png" />
+    <Resource Include="Resources\txt_icon.png" />
+    <Resource Include="Resources\ss_icon.png" />
+    <Content Include="tessdata\.gitmodules" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Tesseract.5.2.0\build\Tesseract.targets" Condition="Exists('..\packages\Tesseract.5.2.0\build\Tesseract.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Tesseract.5.2.0\build\Tesseract.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Tesseract.5.2.0\build\Tesseract.targets'))" />
+  </Target>
+</Project>

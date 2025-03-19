@@ -1,0 +1,81 @@
+﻿<Window x:Class="xzknshot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:xzknshot"
+        mc:Ignorable="d"
+        Title="xzknshot"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowState="Normal"
+        KeyDown="Window_KeyDown">
+
+    <Grid x:Name="mainGrid" Focusable="True">
+        
+        <Image x:Name="screenshotImage" Stretch="Fill" />
+
+        <Rectangle x:Name="darkOverlay" Fill="#80000000" />
+
+        <Canvas x:Name="selectionCanvas" Background="Transparent"
+                MouseLeftButtonDown="Canvas_MouseLeftButtonDown"
+                MouseMove="Canvas_MouseMove"
+                MouseLeftButtonUp="Canvas_MouseLeftButtonUp">
+
+            <Rectangle x:Name="selectionRectangle"
+                       Visibility="Collapsed"
+                       Fill="Transparent"
+                       RadiusX="2"
+                       RadiusY="2"
+                       StrokeDashArray="4 2"
+                       Stroke="White" />
+
+            <!-- Thumb -->
+            <Thumb x:Name="resizeThumb"
+                   Width="10" Height="10"
+                   Cursor="SizeNWSE"
+                   Background="White"
+                   BorderBrush="Black"
+                   BorderThickness="1"
+                   DragDelta="ResizeThumb_DragDelta"
+                   Visibility="Collapsed" />
+
+            <!-- Menu Panel -->
+            <Border x:Name="menuPanel"
+                    BorderBrush="#EFEFEF"
+                    BorderThickness="2"
+                    CornerRadius="2"
+                    Visibility="Collapsed"
+                    Background="#EFEFEF">
+
+                <StackPanel Orientation="Vertical">
+                    <!-- SS -->
+                    <Border CornerRadius="3" Margin="4" Background="#EFEFEF">
+                        <Image Source="pack://application:,,,/Resources/ss_icon.png"
+                               Width="24" Height="24"
+                               Cursor="Hand"
+                               MouseLeftButtonDown="SS_Click" />
+                    </Border>
+
+                    <!-- Math -->
+                    <Border CornerRadius="3" Margin="4" Background="#EFEFEF">
+                        <Image Source="pack://application:,,,/Resources/math_icon.png"
+                               Width="24" Height="24"
+                               Cursor="Hand"
+                               MouseLeftButtonDown="Math_Click" />
+                    </Border>
+
+                    <!-- Text -->
+                    <Border CornerRadius="3" Margin="4" Background="#EFEFEF">
+                        <Image Source="pack://application:,,,/Resources/txt_icon.png"
+                               Width="24" Height="24"
+                               Cursor="Hand"
+                               MouseLeftButtonDown="Text_Click" />
+                    </Border>
+                </StackPanel>
+            </Border>
+        </Canvas>
+    </Grid>
+</Window>
